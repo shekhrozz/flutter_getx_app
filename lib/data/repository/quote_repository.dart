@@ -6,7 +6,7 @@ import 'package:flutter_getx_app/data/model/quote_model.dart';
 import 'package:flutter_getx_app/data/model/quote_wrapper.dart';
 
 class QuoteApiRepository {
-  late final QuotApi quoteApi;
+  late final QuoteApi quoteApi;
   QuoteApiRepository({required this.quoteApi});
 
   Future<List<Quote?>?> getQuotes()async{
@@ -19,4 +19,6 @@ class QuoteApiRepository {
     }
     return List.empty();
   }
+
+  getSingleQuote({required id}) {}
 }

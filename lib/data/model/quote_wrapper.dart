@@ -1,6 +1,5 @@
 
 import 'package:flutter_getx_app/data/model/quote_model.dart';
-
 class QuoteWrapper {
   final List<Quote?>? quotes;
   final int? total;
@@ -34,42 +33,3 @@ class QuoteWrapper {
     return map;
   }
 }
-// class QuoteWrapper {
-//    final List<Quote?> quotes;
-//   final int? total;
-//    final int? skip;
-//    final int? limit;
-//    QuoteWrapper({
-//     required this.total,
-//     required this.limit,
-//     required this.skip,
-//     required this.quotes
-    
-//    });
-//    factory QuoteWrapper.fromJson(Map<String,dynamic>json)=>QuoteWrapper(
-//     total:json['total'],
-//      limit:json['limit'], 
-//      skip:json['skip'], 
-//      quotes:List.from(json['quotes'].map((e)=>QuoteWrapper.fromJson(e))));
-
-//      QuoteWrapper copyWith({
-//       int? total,int? skip,int? limit, List<Quote?>? quotes
-//      })=>
-//      QuoteWrapper(
-//       total: total?? this.total,
-//        limit: limit?? this.limit,
-//         skip: skip?? this.skip,
-//          quotes: quotes?? this.quotes);
-
-
-//          Map<String,dynamic>toJson(){
-//           Map<String,dynamic>map={};
-//           map['total']=total;
-//           map['skip']=skip;
-//           map['limit']=limit;
-//           map['quotes']=List.from(quotes.map((e) =>e!.toJson()));
-//           return map;
-//          }
-  
-  
-// }

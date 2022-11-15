@@ -33,6 +33,7 @@ class QuoteView extends GetView<QuoteController> {
                 debugPrint(snapshot.data.toString());
 
                 return ListView.separated(
+                  shrinkWrap: true,
                   itemBuilder:(context, index) {
                     final quote=snapshot.data![index];
                     final colorIndex=index%controller.colorList.length;
@@ -41,7 +42,16 @@ class QuoteView extends GetView<QuoteController> {
                       backgroundColor: controller.colorList[colorIndex],
                       title:Text(quote!.author??'author'),
                       children: [
-                        
+                        ListTile(
+                          onTap: (){
+                            Get.snackbar(quote.author??'author', 
+                            quote.quote??'quote',
+                            barBlur: 20);
+                           controller.saveDateToDb(quote: quote);
+                          },
+                          title: Text(quote.quote??'quote'),
+                        )
+
                       ],
                        );
                   }, 
